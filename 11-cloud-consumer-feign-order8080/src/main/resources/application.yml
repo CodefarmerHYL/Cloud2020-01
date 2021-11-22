@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: feign-consumer-order #\u5165\u4F4F\u8FDB EurekaServer \u7684\u540D\u79F0
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true  #\u4ECE EurekaServer \u6293\u53D6\u5DF2\u6709\u7684\u6CE8\u518C\u4FE1\u606F
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/
+
+
+logging:
+  level:
+    #feign\u65E5\u5FD7\u4EE5\u4EC0\u4E48\u7EA7\u522B\u76D1\u63A7\u54EA\u4E2A\u63A5\u53E3
+    com.atguigu.springcloud.service.PaymentFeignService: debug
+    

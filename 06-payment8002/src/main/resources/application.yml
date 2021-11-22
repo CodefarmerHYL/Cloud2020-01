@@ -1,0 +1,30 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: cloud-payment-service #\u5165\u4F4F\u8FDB EurekaServer \u7684\u540D\u79F0
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+eureka:
+  client:
+    register-with-eureka: true  #\u5C06\u81EA\u5DF1\u6CE8\u518C\u5230 EurekaServer
+    fetch-registry: true  #\u4ECE EurekaServer \u6293\u53D6\u5DF2\u6709\u7684\u6CE8\u518C\u4FE1\u606F
+    service-url:
+      #\u5165\u4F4F\u5730\u5740\uFF08\u96C6\u7FA4\u7248\uFF09
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  instance:
+    instance-id: payment8002  #\u4FEE\u6539\u4E3B\u673A\u540D\u79F0
+    prefer-ip-address: true   #\u8BBF\u95EE\u8DEF\u5F84\u663E\u793Aip\u5730\u5740
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.springcloud.bean  #\u6240\u6709bean\u522B\u540D\u6240\u5728\u7C7B\u5305
+
+  configuration:
+    map-underscore-to-camel-case: true  #\u5F00\u542F\u9A7C\u5CF0\u547D\u540D\u89C4\u5219
+

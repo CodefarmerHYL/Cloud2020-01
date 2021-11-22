@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloud-consumer-order #\u5165\u4F4F\u8FDB EurekaServer \u7684\u540D\u79F0
+  cloud:
+    #\u914D\u7F6Ezookeeper
+    zookeeper:
+      connect-string: 192.168.1.103:2181

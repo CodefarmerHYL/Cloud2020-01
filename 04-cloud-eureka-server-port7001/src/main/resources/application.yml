@@ -1,0 +1,17 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: eureka7001.com #服务器的名称（访问的主机地址 http://eureka7001.com:7001/）
+
+  client:
+    register-with-eureka: false #不将自己注册到 EurekaServer（自己就是 EurekaServer）
+    fetch-registry: false #声明自己负责管理 EurekaServer 里的服务
+    service-url:
+      #链接地址（集群版）（和其他的服务器）
+#      defaultZone: http://eureka7002.com:7002/eureka/
+      #链接地址（单机版）
+      defaultZone: http://eureka7001.com:7001/eureka/
+  server:
+#    enable-self-preservation: true  #开启自我保护模式（默认为 true）

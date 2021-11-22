@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloud-consumer-service #入住进 EurekaServer 的名称
+
+eureka:
+  client:
+    register-with-eureka: true  #将自己注册到 EurekaServer
+    fetch-registry: true  #从 EurekaServer 抓取已有的注册信息
+    service-url:
+      #入住地址（集群版）
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
